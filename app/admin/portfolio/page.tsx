@@ -4,15 +4,16 @@ import { useState } from 'react';
 import { Box, Tabs, Tab, Typography, useMediaQuery, Paper } from '@mui/material';
 import { useTheme } from '@/lib/theme-context';
 import SolutionsTab from '@/components/admin/portfolio/SolutionsTab';
-import PartnersTab from '@/components/admin/portfolio/PartnersTab';
+import ProductsTab from '@/components/admin/portfolio/ProductsTab';
 import ProjectsTab from '@/components/admin/portfolio/ProjectsTab';
+import PartnersTab from '@/components/admin/portfolio/PartnersTab';
 import CertificationsTab from '@/components/admin/portfolio/CertificationsTab';
-import TestimonialsTab from '@/components/admin/portfolio/TestimonialsTab';
 import BlogTab from '@/components/admin/portfolio/BlogTab';
+import TestimonialsTab from '@/components/admin/portfolio/TestimonialsTab';
 import SettingsTab from '@/components/admin/portfolio/SettingsTab';
 import { 
   Folder, FormatQuote, Article, Settings,
-  Dashboard, Handshake, SettingsInputAntenna, Verified
+  Dashboard, Handshake, SettingsInputAntenna, Verified, Category
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 
@@ -24,12 +25,13 @@ export default function PortfolioAdminLegacy() {
 
   const tabs = [
     { label: 'Solutions', icon: <SettingsInputAntenna />, component: <SolutionsTab /> },
-    { label: 'Partners', icon: <Handshake />, component: <PartnersTab /> },
+    { label: 'Products', icon: <Category />, component: <ProductsTab /> },
     { label: 'Projects', icon: <Folder />, component: <ProjectsTab /> },
-    { label: 'Certifications', icon: <Verified />, component: <CertificationsTab /> },
+    { label: 'Partners', icon: <Handshake />, component: <PartnersTab /> },
+    { label: 'Licenses & Accreditations', icon: <Verified />, component: <CertificationsTab /> },
+    { label: 'News & Press Releases', icon: <Article />, component: <BlogTab /> },
     { label: 'Testimonials', icon: <FormatQuote />, component: <TestimonialsTab /> },
-    { label: 'News & Blog', icon: <Article />, component: <BlogTab /> },
-    { label: 'Settings', icon: <Settings />, component: <SettingsTab /> },
+    { label: 'Corporate Settings', icon: <Settings />, component: <SettingsTab /> },
   ];
 
   const getIconColor = (index: number) => {

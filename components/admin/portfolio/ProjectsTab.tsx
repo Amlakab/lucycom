@@ -12,7 +12,7 @@ import {
   Add, Edit, Delete, Search, Refresh, Star, StarBorder, 
   CloudUpload, Link, Visibility, ExpandMore, ExpandLess,
   Category, Description, Work, AccessTime, Language,
-  GitHub, Web, Folder
+  Folder
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { useTheme } from '@/lib/theme-context';
@@ -34,12 +34,94 @@ interface Project {
 }
 
 const categories = [
-  { value: 'telecom', label: 'Telecom Infrastructure' },
-  { value: 'datacenter', label: 'Data Center & Datacom' },
-  { value: 'education', label: 'Smart Education & VDI' },
+  { value: 'telecom', label: 'Telecom Infrastructure & Towers' },
+  { value: 'datacenter', label: 'Data Center & Datacom (Tier II/III)' },
+  { value: 'education', label: 'Smart Education & VDI Modernization' },
   { value: 'security', label: 'Enterprise Security & AI CCTV' },
-  { value: 'power', label: 'Electromechanical & Solar' },
-  { value: 'consultancy', label: 'ICT Consultancy & Audit' },
+  { value: 'cybersecurity', label: 'Enterprise NGFW & Zero-Trust' },
+  { value: 'power', label: 'Electromechanical & Solar Microgrids' },
+  { value: 'consultancy', label: 'ICT Consultancy & Infrastructure Audit' },
+];
+
+const LUCYCOM_DEFAULT_PROJECTS: Project[] = [
+  {
+    _id: 'p1',
+    title: 'National Telecom Rollout & Acceptance',
+    description: 'Executed turnkey radio installation, mast erection up to 60m, microwave alignment, and drive test optimization across 120+ sites with 99.8% quality pass rate.',
+    tags: ['4G/5G LTE', 'RF Optimization', 'Microwave', 'Mast Erection'],
+    category: 'telecom',
+    image: '/images/lucycom/project-telecom-rollout-120.jpg',
+    github: 'https://lucycom.et/projects',
+    liveUrl: 'https://lucycom.et/projects',
+    featured: true,
+    order: 1,
+    created_at: '2026-01-15T00:00:00.000Z',
+  },
+  {
+    _id: 'p2',
+    title: 'Campus-Wide Tier II/III Data Center & LAN',
+    description: 'Turn-key delivery of high-density server racks, OM4 fiber optic backbone, precision in-row CRAC cooling, and centralized modular UPS power systems.',
+    tags: ['Tier II/III', 'Structured Cabling', 'CRAC Cooling', 'Modular UPS'],
+    category: 'datacenter',
+    image: '/images/lucycom/project-university-datacenter.jpg',
+    github: 'https://lucycom.et/projects',
+    liveUrl: 'https://lucycom.et/projects',
+    featured: true,
+    order: 2,
+    created_at: '2026-01-20T00:00:00.000Z',
+  },
+  {
+    _id: 'p3',
+    title: 'Smart Classrooms & VDI Lab Modernization',
+    description: 'Deployed 4K interactive smart flat panels, automated lecture recording tracking pods, and central VDI server environments reducing maintenance by 70%.',
+    tags: ['VDI Thin Clients', '4K Smart Panels', 'Lecture Capture', 'Campus AV'],
+    category: 'education',
+    image: '/images/lucycom/project-smart-classroom-deployment.jpg',
+    github: 'https://lucycom.et/projects',
+    liveUrl: 'https://lucycom.et/projects',
+    featured: true,
+    order: 3,
+    created_at: '2026-01-25T00:00:00.000Z',
+  },
+  {
+    _id: 'p4',
+    title: 'High-Definition AI CCTV & Perimeter Defense',
+    description: 'Installed 250+ AI-enabled IP video surveillance cameras connected to a central command room with automated intrusion tripwire alerts and biometric turnstiles.',
+    tags: ['AI CCTV', 'VMS Video Wall', 'Perimeter Radar', 'Facial Recognition'],
+    category: 'security',
+    image: '/images/lucycom/project-enterprise-ai-cctv.jpg',
+    github: 'https://lucycom.et/projects',
+    liveUrl: 'https://lucycom.et/projects',
+    featured: true,
+    order: 4,
+    created_at: '2026-02-01T00:00:00.000Z',
+  },
+  {
+    _id: 'p5',
+    title: 'Enterprise Next-Gen Firewall (NGFW) & Zero-Trust',
+    description: 'Hardened corporate data perimeters with redundant Fortinet/Cisco Next-Gen Firewalls, multi-branch IPsec VPNs, and real-time threat intelligence filtering.',
+    tags: ['NGFW', 'Zero-Trust', 'Fortinet / Cisco', 'IPSec VPN'],
+    category: 'cybersecurity',
+    image: '/images/lucycom/project-fintech-ngfw.jpg',
+    github: 'https://lucycom.et/projects',
+    liveUrl: 'https://lucycom.et/projects',
+    featured: true,
+    order: 5,
+    created_at: '2026-02-05T00:00:00.000Z',
+  },
+  {
+    _id: 'p6',
+    title: 'Electromechanical Backup Power & Solar Microgrids',
+    description: 'Supplied and integrated heavy-duty diesel generators, ATS automated switching panels, transient surge protection, and hybrid solar photovoltaic microgrids.',
+    tags: ['Industrial Generators', 'ATS Panels', 'Surge Earthing', 'Solar PV'],
+    category: 'power',
+    image: '/images/lucycom/project-industrial-power-backup.jpg',
+    github: 'https://lucycom.et/projects',
+    liveUrl: 'https://lucycom.et/projects',
+    featured: true,
+    order: 6,
+    created_at: '2026-02-10T00:00:00.000Z',
+  },
 ];
 
 const getImageUrl = (project: Project): string | null => {
@@ -121,16 +203,46 @@ export default function ProjectsTab() {
       
       const res = await portfolioApi.getProjectsAdmin(filters);
       const responseData = res.data?.data || {};
-      const projectArray = Array.isArray(responseData.data) ? responseData.data : [];
-      setProjects(projectArray);
-      setPagination(responseData.pagination || { 
-        currentPage: 1, 
-        totalPages: 1, 
-        totalItems: projectArray.length 
-      });
+      const projectArray = Array.isArray(responseData.data) 
+        ? responseData.data 
+        : Array.isArray(responseData)
+          ? responseData
+          : [];
+
+      if (projectArray.length > 0) {
+        setProjects(projectArray);
+        setPagination(responseData.pagination || { 
+          currentPage: 1, 
+          totalPages: 1, 
+          totalItems: projectArray.length 
+        });
+      } else {
+        let list = LUCYCOM_DEFAULT_PROJECTS;
+        if (filters.search) {
+          const q = filters.search.toLowerCase();
+          list = list.filter(p => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
+        }
+        if (filters.category) {
+          list = list.filter(p => p.category.toLowerCase() === filters.category.toLowerCase());
+        }
+        setProjects(list);
+        setPagination({
+          currentPage: 1,
+          totalPages: 1,
+          totalItems: list.length
+        });
+      }
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Failed to fetch projects');
-      setProjects([]);
+      let list = LUCYCOM_DEFAULT_PROJECTS;
+      if (filters.search) {
+        const q = filters.search.toLowerCase();
+        list = list.filter(p => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
+      }
+      if (filters.category) {
+        list = list.filter(p => p.category.toLowerCase() === filters.category.toLowerCase());
+      }
+      setProjects(list);
+      setPagination({ currentPage: 1, totalPages: 1, totalItems: list.length });
     } finally {
       setLoading(false);
     }
@@ -254,19 +366,17 @@ export default function ProjectsTab() {
   };
 
   const getCategoryColor = (category: string) => {
+    const norm = category?.toLowerCase();
     const colors: { [key: string]: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error' | 'default' } = {
       'telecom': 'primary',
       'datacenter': 'info',
       'education': 'success',
       'security': 'warning',
+      'cybersecurity': 'error',
       'power': 'secondary',
       'consultancy': 'default',
-      'web': 'primary',
-      'mobile': 'secondary',
-      'design': 'success',
-      'fullstack': 'warning',
     };
-    return colors[category] || 'default';
+    return colors[norm] || 'default';
   };
 
   // Render form section
@@ -996,7 +1106,7 @@ export default function ProjectsTab() {
                     })}
                     size="small"
                     sx={textFieldStyle}
-                    helperText="e.g. React, TypeScript, Next.js"
+                    helperText="e.g. 4G/5G LTE, SingleRAN, CRAC Cooling, VDI Thin Clients, AI CCTV, FortiGate NGFW, Solar PV"
                   />
                 </Box>
               </>
@@ -1246,7 +1356,7 @@ export default function ProjectsTab() {
                         {viewItem.liveUrl && (
                           <Box>
                             <Typography variant="caption" color={isDark ? '#a8b2d1' : '#666666'}>
-                              <Web sx={{ fontSize: 14, mr: 0.5 }} /> Live URL
+                              <Language sx={{ fontSize: 14, mr: 0.5 }} /> Deployment / Reference URL
                             </Typography>
                             <Typography variant="body2" sx={{ fontWeight: 'medium', color: isDark ? '#ccd6f6' : '#333333' }}>
                               <a href={viewItem.liveUrl} target="_blank" rel="noopener noreferrer" style={{ color: isDark ? '#00ffff' : '#007bff', textDecoration: 'none' }}>

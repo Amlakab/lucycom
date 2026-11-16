@@ -29,28 +29,30 @@ export default function PortfolioAdmin() {
   const tabMap: { [key: string]: number } = {
     'solutions': 0,
     'products': 1,
-    'partners': 2,
-    'projects': 3,
+    'projects': 2,
+    'partners': 3,
+    'licenses': 4,
     'certifications': 4,
-    'testimonials': 5,
-    'blog': 6,
+    'news': 5,
+    'blog': 5,
+    'testimonials': 6,
     'settings': 7,
     // Fallbacks
-    'experiences': 0,
-    'educations': 0,
-    'skills': 2,
+    'experiences': 2,
+    'educations': 2,
+    'skills': 0,
   };
 
-  const tabNames = ['solutions', 'products', 'partners', 'projects', 'certifications', 'testimonials', 'blog', 'settings'];
+  const tabNames = ['solutions', 'products', 'projects', 'partners', 'licenses', 'news', 'testimonials', 'settings'];
 
   const tabs = [
     { label: 'Solutions', icon: <SettingsInputAntenna />, component: <SolutionsTab /> },
     { label: 'Products', icon: <Category />, component: <ProductsTab /> },
-    { label: 'Partners', icon: <Handshake />, component: <PartnersTab /> },
     { label: 'Projects', icon: <Folder />, component: <ProjectsTab /> },
-    { label: 'Certifications & Licenses', icon: <Verified />, component: <CertificationsTab /> },
+    { label: 'Partners', icon: <Handshake />, component: <PartnersTab /> },
+    { label: 'Licenses & Accreditations', icon: <Verified />, component: <CertificationsTab /> },
+    { label: 'News & Press Releases', icon: <Article />, component: <BlogTab /> },
     { label: 'Testimonials', icon: <FormatQuote />, component: <TestimonialsTab /> },
-    { label: 'News & Insights', icon: <Article />, component: <BlogTab /> },
     { label: 'Corporate Settings', icon: <Settings />, component: <SettingsTab /> },
   ];
 

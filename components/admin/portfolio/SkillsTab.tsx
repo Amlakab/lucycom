@@ -32,14 +32,11 @@ const categories = [
   'telecom',
   'datacenter',
   'security',
+  'cybersecurity',
+  'education',
   'power',
   'networking',
-  'consultancy',
-  // legacy compatibility
-  'frontend',
-  'backend',
-  'design',
-  'tools'
+  'consultancy'
 ];
 const iconOptions = [
   'FaNetworkWired', 'FaServer', 'FaShieldAlt', 'FaBolt', 'FaGraduationCap', 
@@ -214,10 +211,14 @@ export default function SkillsTab() {
 
   const getCategoryColor = (category: string) => {
     const colors: { [key: string]: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error' | 'default' } = {
-      'frontend': 'primary',
-      'backend': 'secondary',
-      'design': 'success',
-      'tools': 'warning',
+      'telecom': 'primary',
+      'datacenter': 'info',
+      'security': 'warning',
+      'cybersecurity': 'error',
+      'education': 'success',
+      'power': 'secondary',
+      'networking': 'info',
+      'consultancy': 'default',
     };
     return colors[category] || 'default';
   };
@@ -804,7 +805,7 @@ export default function SkillsTab() {
                   required
                   size="small"
                   sx={textFieldStyle}
-                  placeholder="e.g. React, TypeScript, Node.js"
+                  placeholder="e.g. RF Drive Testing, OTDR Splicing, CRAC Cooling, FortiGate NGFW, VDI Clustering"
                 />
                 <FormControl fullWidth size="small">
                   <InputLabel sx={labelStyle}>Category</InputLabel>

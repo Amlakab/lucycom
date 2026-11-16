@@ -724,17 +724,17 @@ export default function ExperiencesTab() {
                   required
                   size="small"
                   sx={textFieldStyle}
-                  placeholder="e.g. Senior Software Developer"
+                  placeholder="e.g. Senior Telecom Field Engineer / Data Center Facility Architect"
                 />
                 <TextField
                   fullWidth
-                  label="Company"
+                  label="Company / Project Organization"
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   required
                   size="small"
                   sx={textFieldStyle}
-                  placeholder="e.g. Google"
+                  placeholder="e.g. LucyCom Technologies S.C. / Ethio Telecom"
                 />
                 <TextField
                   fullWidth

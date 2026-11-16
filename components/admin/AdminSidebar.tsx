@@ -33,13 +33,13 @@ const menuItems: MenuItem[] = [
   { name: 'Dashboard Overview', href: '/admin', icon: Home },
   { name: 'Solutions Pillars', href: '/admin?tab=solutions', tabKey: 'solutions', icon: Radio },
   { name: 'Products Catalog', href: '/admin?tab=products', tabKey: 'products', icon: Package },
-  { name: 'Partners Ecosystem', href: '/admin?tab=partners', tabKey: 'partners', icon: Building2 },
   { name: 'Projects Portfolio', href: '/admin?tab=projects', tabKey: 'projects', icon: Folder },
-  { name: 'Certifications & Licenses', href: '/admin?tab=certifications', tabKey: 'certifications', icon: Award },
+  { name: 'Partners Ecosystem', href: '/admin?tab=partners', tabKey: 'partners', icon: Building2 },
+  { name: 'Licenses & Accreditations', href: '/admin?tab=licenses', tabKey: 'licenses', icon: Award },
+  { name: 'News & Press Releases', href: '/admin?tab=news', tabKey: 'news', icon: Newspaper },
   { name: 'Client Testimonials', href: '/admin?tab=testimonials', tabKey: 'testimonials', icon: Quote },
-  { name: 'News & Whitepapers', href: '/admin?tab=blog', tabKey: 'blog', icon: Newspaper },
-  { name: 'Corporate Branding', href: '/admin?tab=settings', tabKey: 'settings', icon: Sliders },
-  { name: 'Inquiries & Quotes', href: '/admin/feedback', icon: MessageSquare },
+  { name: 'Corporate Settings', href: '/admin?tab=settings', tabKey: 'settings', icon: Sliders },
+  { name: 'Inquiries & Requests', href: '/admin/feedback', icon: MessageSquare },
   { name: 'Live Website', href: '/', icon: Globe },
 ];
 
@@ -72,6 +72,12 @@ export default function AdminSidebar({
 
   const isItemActive = (item: MenuItem) => {
     if (item.tabKey) {
+      if (item.tabKey === 'licenses') {
+        return pathname === '/admin' && (currentTab === 'licenses' || currentTab === 'certifications');
+      }
+      if (item.tabKey === 'news') {
+        return pathname === '/admin' && (currentTab === 'news' || currentTab === 'blog');
+      }
       return pathname === '/admin' && currentTab === item.tabKey;
     }
     if (item.href === '/admin') {

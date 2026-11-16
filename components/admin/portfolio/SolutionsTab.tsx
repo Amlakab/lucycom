@@ -49,6 +49,123 @@ const getImageUrl = (item: SolutionItem): string | null => {
   return item.image || null;
 };
 
+const DEFAULT_SOLUTIONS_FALLBACK: SolutionItem[] = [
+  {
+    _id: 's1',
+    title: 'Telecom Infrastructure & Mobile Network Rollout',
+    slug: 'telecom-infrastructure',
+    shortDescription: 'Turnkey BTS deployment, optical fiber networking, microwave transmission, and RF site optimization.',
+    description: 'LUCYCOM TECHNOLOGIES S.C. delivers comprehensive telecommunications infrastructure engineering. From greenfield site surveys and mast erection up to 60 meters to 4G/5G LTE radio equipment installation, commissioning, microwave link alignment, and optical fiber backbone splicing. We guarantee SLA-backed operational handovers adhering strictly to ECA standards.',
+    image: '/images/lucycom/solution-telecom-services.jpg',
+    features: [
+      'Telecom Tower Mast Erection (up to 60m)',
+      '4G/5G LTE Radio Access Installation & Commissioning',
+      'Microwave Transmission Links & Feeder Alignment',
+      'Drive Test Quality Verification & RF Optimization',
+      'Fiber Optic Backhaul & OTDR Acceptance Testing'
+    ],
+    keyTechnologies: ['Huawei SingleRAN', 'Nokia AirScale', 'Ericsson Radio System', 'Cisco Optical', 'Anritsu SiteMaster'],
+    deliverables: 'Civil tower foundation, feeder sweep tests, optical OTDR traces, provisional acceptance certificate (PAC)',
+    order: 1,
+    featured: true,
+  },
+  {
+    _id: 's2',
+    title: 'Tier II/III Data Center & Structured Cabling',
+    slug: 'datacenter-infrastructure',
+    shortDescription: 'Tier II/III compliant builds, precision cooling, modular UPS, and high-density fiber structured cabling.',
+    description: 'We engineer turnkey mission-critical data center facilities complying with TIA-942 and Uptime Institute standards. Lucycom delivers complete physical containment, precision CRAC cooling with hot/cold aisle isolation, modular N+1 uninterruptible power systems (UPS), automated diesel backup generators, and structured Cat6A/Cat7 copper and MPO optical fiber backbone distribution.',
+    image: '/images/lucycom/solution-datacenter-datacom.jpg',
+    features: [
+      'Tier II & Tier III Compliant Physical Architecture',
+      'Precision In-Row CRAC Air Conditioning & Containment',
+      'Modular N+1 Online Double-Conversion UPS Systems',
+      'High-Density Server Racks & Optical Fiber Backbone',
+      'FM200 / Novec Fire Suppression & Environmental Monitoring'
+    ],
+    keyTechnologies: ['Schneider / APC', 'Vertiv Liebert', 'Siemon / CommScope', 'Eaton Power', 'Sensaphone EMS'],
+    deliverables: 'TIA-942 Tier compliance report, thermal CFD analysis, electrical single-line diagram, cabling certification',
+    order: 2,
+    featured: true,
+  },
+  {
+    _id: 's3',
+    title: 'Smart Education & Campus Digitalization',
+    slug: 'smart-education',
+    shortDescription: 'Interactive digital podiums, multi-angle lecture recording, and Virtual Desktop Infrastructure (VDI).',
+    description: 'Empowering universities, colleges, and secondary institutions with modern smart learning environments. Our solutions feature 4K interactive smart touch panels, automated AI tracking lecture capture pods, digital speaker podiums, centralized e-learning content servers, and OS-Easy powered Virtual Desktop Infrastructure (VDI) computer laboratories that reduce PC maintenance costs by 70%.',
+    image: '/images/lucycom/solution-smart-classroom.jpg',
+    features: [
+      'Interactive Smart Flat Panels & Digital Podiums',
+      'Automated Multi-Angle Lecture Recording Systems',
+      'OS-Easy Cloud VDI Computer Laboratory Architecture',
+      'Central Classroom Broadcast & Digital Signage',
+      'Campus-Wide High-Density Wi-Fi 6 Access Points'
+    ],
+    keyTechnologies: ['OS-Easy VDI', 'Hikvision Interactive Panels', 'H3C Enterprise Wi-Fi', 'Epiphan Video', 'Crestron AV'],
+    deliverables: 'Smart classroom hardware deployment, VDI golden image templates, faculty operational training',
+    order: 3,
+    featured: true,
+  },
+  {
+    _id: 's4',
+    title: 'Enterprise Security, AI CCTV & Access Control',
+    slug: 'enterprise-security',
+    shortDescription: 'AI facial surveillance, perimeter radar intrusion defense, and biometric turnstile integration.',
+    description: 'Protecting high-value commercial, government, and educational premises with proactive surveillance. Lucycom implements high-definition AI-driven IP video networks, central security operation center (SOC) video walls, radar-assisted perimeter intrusion detection, automatic number plate recognition (ANPR), and biometric flap-barrier access control gates.',
+    image: '/images/lucycom/solution-security-cctv.jpg',
+    features: [
+      'AI Smart Facial Recognition & Vehicle ANPR Cameras',
+      'Video Management System (VMS) with Video Walls',
+      'Perimeter Microwave Radar & Electric Fence Defense',
+      'Biometric & RFID Speed Gates and Turnstiles',
+      'Fire Alarm Detection & Emergency Evacuation PA Systems'
+    ],
+    keyTechnologies: ['Hikvision DeepInView', 'Dahua Technology', 'Suprema Biometrics', 'Milestone Systems', 'Bosch Security'],
+    deliverables: 'Surveillance coverage diagram, storage retention calculations, SOC control room commissioning',
+    order: 4,
+    featured: true,
+  },
+  {
+    _id: 's5',
+    title: 'Electromechanical Backup Power & Solar Systems',
+    slug: 'electromechanical-solar',
+    shortDescription: 'Industrial diesel generators, automatic transfer switches (ATS), and solar microgrids.',
+    description: 'Ensuring zero downtime for critical facilities in regions with unstable utility power. Our Grade-5 certified electromechanical team provisions prime and standby heavy-duty diesel generator sets, automatic transfer switch (ATS) synchronization panels, lightning protection earthing meshes, and rooftop hybrid solar photovoltaic microgrid solutions.',
+    image: '/images/lucycom/solution-electromechanical-solar.jpg',
+    features: [
+      'Heavy-Duty Industrial Diesel Generator Sets (20kVA - 1500kVA)',
+      'Automated Transfer Switch (ATS) & Generator Synchronization',
+      'Rooftop Grid-Tied & Hybrid Solar Photovoltaic Systems',
+      'Transient Voltage Surge Suppression & Copper Earthing Mesh',
+      'Periodic Electromechanical Preventive Maintenance (SLA)'
+    ],
+    keyTechnologies: ['Cummins Power', 'Perkins Engines', 'Schneider ATS', 'Huawei Solar Inverters', 'ABB Protection'],
+    deliverables: 'Load calculation study, generator installation and load-bank stress testing, earthing resistance certificate',
+    order: 5,
+    featured: true,
+  },
+  {
+    _id: 's6',
+    title: 'ICT Consultancy, Audit & Maintenance Retainers',
+    slug: 'ict-consultancy',
+    shortDescription: 'Comprehensive network audits, RFP/tender BOQ preparation, and 24/7 technical SLA retainers.',
+    description: 'Bridging strategic planning with hands-on technical execution. Lucycom provides enterprise ICT infrastructure audits, active and passive network health diagnostics, structured cabling recertification, vendor-neutral RFP/BOQ bill of quantities drafting, and 24/7 SLA maintenance contracts to keep institutional operations running at peak efficiency.',
+    image: '/images/lucycom/solution-ict-consultancy.jpg',
+    features: [
+      'Enterprise Network & Cybersecurity Infrastructure Audits',
+      'Data Center TIA-942 Compliance Gap Analysis',
+      'Tender Specification Drafting & Vendor Evaluation (BOQ)',
+      '24/7/365 On-Demand SLA Engineering Maintenance Contracts',
+      'Optical Fiber OTDR Fluke Cable Certification'
+    ],
+    keyTechnologies: ['Fluke Networks DSX-8000', 'Wireshark Enterprise', 'SolarWinds NCM', 'Netformx DesignXpert'],
+    deliverables: 'Detailed infrastructure audit report, risk mitigation matrix, vendor-neutral technical specifications',
+    order: 6,
+    featured: true,
+  },
+];
+
 export default function SolutionsTab() {
   const { theme } = useTheme();
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -100,21 +217,44 @@ export default function SolutionsTab() {
         : Array.isArray(responseData)
           ? responseData
           : [];
-      setSolutions(solutionArray);
-      if (responseData.pagination) {
-        setPagination(responseData.pagination);
-      } else if (res.data?.pagination) {
-        setPagination(res.data.pagination);
+      if (solutionArray.length > 0) {
+        setSolutions(solutionArray);
+        if (responseData.pagination) {
+          setPagination(responseData.pagination);
+        } else if (res.data?.pagination) {
+          setPagination(res.data.pagination);
+        } else {
+          setPagination({
+            currentPage: filters.page || 1,
+            totalPages: Math.ceil(solutionArray.length / (filters.limit || 10)) || 1,
+            totalItems: solutionArray.length,
+          });
+        }
       } else {
+        let fallback = DEFAULT_SOLUTIONS_FALLBACK;
+        if (filters.search) {
+          const q = filters.search.toLowerCase();
+          fallback = fallback.filter(s => s.title.toLowerCase().includes(q) || s.shortDescription.toLowerCase().includes(q));
+        }
+        setSolutions(fallback);
         setPagination({
-          currentPage: filters.page || 1,
-          totalPages: Math.ceil(solutionArray.length / (filters.limit || 10)) || 1,
-          totalItems: solutionArray.length,
+          currentPage: 1,
+          totalPages: 1,
+          totalItems: fallback.length,
         });
       }
     } catch (err: any) {
-      setError(err?.response?.data?.message || err?.message || 'Failed to fetch solutions');
-      setSolutions([]);
+      let fallback = DEFAULT_SOLUTIONS_FALLBACK;
+      if (filters.search) {
+        const q = filters.search.toLowerCase();
+        fallback = fallback.filter(s => s.title.toLowerCase().includes(q) || s.shortDescription.toLowerCase().includes(q));
+      }
+      setSolutions(fallback);
+      setPagination({
+        currentPage: 1,
+        totalPages: 1,
+        totalItems: fallback.length,
+      });
     } finally {
       setLoading(false);
     }

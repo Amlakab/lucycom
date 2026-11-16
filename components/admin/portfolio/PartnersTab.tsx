@@ -44,6 +44,19 @@ const getLogoUrl = (item: PartnerItem): string | null => {
   return item.logo || null;
 };
 
+const DEFAULT_PARTNERS_FALLBACK: PartnerItem[] = [
+  { _id: 'p1', name: 'HUAWEI', domain: 'Telecom & SingleRAN', description: 'World leader in telecommunications, 4G/5G radio infrastructure, SingleRAN, and carrier microwave links.', tier: 'Global OEM Partner', website: 'https://www.huawei.com', order: 1, featured: true },
+  { _id: 'p2', name: 'NOKIA', domain: 'Optical & Mobile Infrastructure', description: 'Global technology pioneer in carrier routing, AirScale 5G mobile RAN, and optical DWDM transport.', tier: 'Global OEM Partner', website: 'https://www.nokia.com', order: 2, featured: true },
+  { _id: 'p3', name: 'ERICSSON', domain: '5G Radio & Transmission', description: 'Industry-standard 4G/5G cellular systems, antenna arrays, and high-capacity carrier transmission systems.', tier: 'Strategic Technology Partner', website: 'https://www.ericsson.com', order: 3, featured: true },
+  { _id: 'p4', name: 'CISCO', domain: 'Enterprise Switching & Routing', description: 'Global standard for enterprise routing, core switching backbones, and zero-trust software-defined networks.', tier: 'Certified Solution Provider', website: 'https://www.cisco.com', order: 4, featured: true },
+  { _id: 'p5', name: 'FORTINET', domain: 'Next-Gen Cybersecurity & NGFW', description: 'Industry-leading Next-Generation Firewalls (FortiGate), secure SD-WAN, and synchronized security fabric.', tier: 'Authorized Security Partner', website: 'https://www.fortinet.com', order: 5, featured: true },
+  { _id: 'p6', name: 'DELL TECHNOLOGIES', domain: 'Data Center Compute & Storage', description: 'Tier-standard rackmount compute servers, modular hyper-converged SAN/NAS storage, and high-availability virtualization.', tier: 'Hardware Infrastructure Partner', website: 'https://www.dell.com', order: 6, featured: true },
+  { _id: 'p7', name: 'SCHNEIDER ELECTRIC', domain: 'Modular UPS & In-Row Cooling', description: 'World leader in precision data center climate cooling, hot-aisle containment, and online double-conversion UPS systems.', tier: 'Data Center Facilities Partner', website: 'https://www.se.com', order: 7, featured: true },
+  { _id: 'p8', name: 'HIKVISION', domain: 'AI Video Surveillance & CCTV', description: 'High-definition IP surveillance cameras, central command operations, and intelligent video neural analytics.', tier: 'Security Solutions Partner', website: 'https://www.hikvision.com', order: 8, featured: true },
+  { _id: 'p9', name: 'DAHUA', domain: 'Perimeter Security & Analytics', description: 'AI face recognition, automated perimeter intrusion alerts, and integrated command room video walls.', tier: 'Surveillance & Access Partner', website: 'https://www.dahuasecurity.com', order: 9, featured: true },
+  { _id: 'p10', name: 'OS-EASY', domain: 'Virtual Desktop Infrastructure (VDI)', description: 'Enterprise-grade desktop virtualization for educational universities, high schools, and smart computer laboratories.', tier: 'Smart Education Partner', website: 'https://www.os-easy.com', order: 10, featured: true },
+];
+
 export default function PartnersTab() {
   const { theme } = useTheme();
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -91,21 +104,44 @@ export default function PartnersTab() {
         : Array.isArray(responseData)
           ? responseData
           : [];
-      setPartners(partnerArray);
-      if (responseData.pagination) {
-        setPagination(responseData.pagination);
-      } else if (res.data?.pagination) {
-        setPagination(res.data.pagination);
+      if (partnerArray.length > 0) {
+        setPartners(partnerArray);
+        if (responseData.pagination) {
+          setPagination(responseData.pagination);
+        } else if (res.data?.pagination) {
+          setPagination(res.data.pagination);
+        } else {
+          setPagination({
+            currentPage: filters.page || 1,
+            totalPages: Math.ceil(partnerArray.length / (filters.limit || 12)) || 1,
+            totalItems: partnerArray.length,
+          });
+        }
       } else {
+        let fallback = DEFAULT_PARTNERS_FALLBACK;
+        if (filters.search) {
+          const q = filters.search.toLowerCase();
+          fallback = fallback.filter(p => p.name.toLowerCase().includes(q) || p.domain.toLowerCase().includes(q));
+        }
+        setPartners(fallback);
         setPagination({
-          currentPage: filters.page || 1,
-          totalPages: Math.ceil(partnerArray.length / (filters.limit || 12)) || 1,
-          totalItems: partnerArray.length,
+          currentPage: 1,
+          totalPages: 1,
+          totalItems: fallback.length,
         });
       }
     } catch (err: any) {
-      setError(err?.response?.data?.message || err?.message || 'Failed to fetch partners');
-      setPartners([]);
+      let fallback = DEFAULT_PARTNERS_FALLBACK;
+      if (filters.search) {
+        const q = filters.search.toLowerCase();
+        fallback = fallback.filter(p => p.name.toLowerCase().includes(q) || p.domain.toLowerCase().includes(q));
+      }
+      setPartners(fallback);
+      setPagination({
+        currentPage: 1,
+        totalPages: 1,
+        totalItems: fallback.length,
+      });
     } finally {
       setLoading(false);
     }

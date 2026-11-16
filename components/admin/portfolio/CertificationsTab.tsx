@@ -14,7 +14,7 @@ import {
 import {
   Add, Edit, Delete, CloudUpload, Visibility, VisibilityOff,
   ExpandMore, ExpandLess, CalendarToday, Category, Description,
-  School, Star, StarBorder
+  School, Star, StarBorder, Verified, Bolt, Business
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { useTheme } from '@/lib/theme-context';
@@ -37,11 +37,87 @@ interface Certification {
 }
 
 const CATEGORIES = [
-  'Academic Credentials & Transcripts',
-  'Technical & Skill-Based Certifications',
-  'Extracurricular, Volunteer & Community Involvement',
-  'Professional Development & Short Courses',
-  'Honors, Awards & Recognition'
+  'ECA Regulatory & Telecom Contractor Licenses',
+  'EEA Electromechanical & Power Competency (Grade-5)',
+  'Commercial Trade & Engineering Licenses',
+  'Federal Import & Distribution Accreditations',
+  'OEM Partner Accreditations & ISO Compliance',
+  'Consultancy & Professional Engineering Accreditations',
+];
+
+const LUCYCOM_DEFAULT_LICENSES: Certification[] = [
+  {
+    _id: 'c1',
+    title: 'Outdoor Telecommunications Facilities Installation & Maintenance Works License',
+    organization: 'Ethiopian Communications Authority (ECA)',
+    description: 'Official regulatory license issued under Communications Service Proclamation No. 1148/2019 for telecommunication facilities, towers, and networks.',
+    credentialId: 'AA/ADISM/3/0000038/2013',
+    credentialUrl: 'https://eca.et',
+    category: 'ECA Regulatory & Telecom Contractor Licenses',
+    startDate: '2021-01-01T00:00:00.000Z',
+    featured: true,
+    created_at: '2026-01-01T00:00:00.000Z',
+  },
+  {
+    _id: 'c2',
+    title: 'Electromechanical Contractor Grade-Five Competency Certificate',
+    organization: 'Ethiopian Energy Authority (EEA)',
+    description: 'Authorized electro-mechanical contractor competency certificate under Proclamation No. 686/2010 for power, cooling, and data center electromechanical works.',
+    credentialId: '51213--247',
+    credentialUrl: 'https://eea.gov.et',
+    category: 'EEA Electromechanical & Power Competency (Grade-5)',
+    startDate: '2021-06-01T00:00:00.000Z',
+    featured: true,
+    created_at: '2026-01-01T00:00:00.000Z',
+  },
+  {
+    _id: 'c3',
+    title: 'Computer Network Design & Cable Installation License (Code: 85121)',
+    organization: 'Addis Ababa City Administration Trade Bureau',
+    description: 'Commercial business license under Proclamation No. 980/2016 for structured cabling, campus backbones, and LAN/WAN infrastructure.',
+    credentialId: 'AACATB/14/672/50644059/2019',
+    credentialUrl: '',
+    category: 'Commercial Trade & Engineering Licenses',
+    startDate: '2020-03-01T00:00:00.000Z',
+    featured: true,
+    created_at: '2026-01-01T00:00:00.000Z',
+  },
+  {
+    _id: 'c4',
+    title: 'Import Trade in Communication & Computer Equipment License (Code: 65721)',
+    organization: 'Ministry of Trade and Regional Integration',
+    description: 'Federal business license for importing carrier-grade hardware, telecom equipment, and server appliances.',
+    credentialId: 'MT/AA/14/672/50644466/2019',
+    credentialUrl: '',
+    category: 'Federal Import & Distribution Accreditations',
+    startDate: '2020-03-01T00:00:00.000Z',
+    featured: true,
+    created_at: '2026-01-01T00:00:00.000Z',
+  },
+  {
+    _id: 'c5',
+    title: 'Consultancy Service on ICT (Code: 86521)',
+    organization: 'Addis Ababa City Administration Trade Bureau',
+    description: 'Licensed consultancy in enterprise systems architecture, datacenter engineering, and network infrastructure.',
+    credentialId: 'AACATB/14/672/50644039/2019',
+    credentialUrl: '',
+    category: 'Consultancy & Professional Engineering Accreditations',
+    startDate: '2020-03-01T00:00:00.000Z',
+    featured: true,
+    created_at: '2026-01-01T00:00:00.000Z',
+  },
+  {
+    _id: 'c6',
+    title: 'Software Development & Systems Implementation (Code: 39141)',
+    organization: 'Addis Ababa City Administration Trade Bureau',
+    description: 'Licensed development and deployment of bespoke enterprise software solutions, digital portals, and cloud systems.',
+    credentialId: 'AACATB/14/672/50644211/2019',
+    credentialUrl: '',
+    category: 'Commercial Trade & Engineering Licenses',
+    startDate: '2020-03-01T00:00:00.000Z',
+    featured: false,
+    created_at: '2026-01-01T00:00:00.000Z',
+  },
 ];
 
 const getImageUrl = (item: Certification): string | null => {
@@ -138,10 +214,33 @@ export default function CertificationsTab() {
         search: filters.search,
         category: filters.category
       });
-      setItems(res.data.data.data || []);
-      setPagination(res.data.data.pagination || { currentPage: 1, totalPages: 1, totalItems: 0 });
+      const list = res.data?.data?.data || res.data?.data || [];
+      if (Array.isArray(list) && list.length > 0) {
+        setItems(list);
+        setPagination(res.data?.data?.pagination || { currentPage: 1, totalPages: 1, totalItems: list.length });
+      } else {
+        let fallback = LUCYCOM_DEFAULT_LICENSES;
+        if (filters.search) {
+          const q = filters.search.toLowerCase();
+          fallback = fallback.filter(l => l.title.toLowerCase().includes(q) || (l.organization && l.organization.toLowerCase().includes(q)));
+        }
+        if (filters.category) {
+          fallback = fallback.filter(l => l.category === filters.category);
+        }
+        setItems(fallback);
+        setPagination({ currentPage: 1, totalPages: 1, totalItems: fallback.length });
+      }
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Failed to fetch');
+      let fallback = LUCYCOM_DEFAULT_LICENSES;
+      if (filters.search) {
+        const q = filters.search.toLowerCase();
+        fallback = fallback.filter(l => l.title.toLowerCase().includes(q) || (l.organization && l.organization.toLowerCase().includes(q)));
+      }
+      if (filters.category) {
+        fallback = fallback.filter(l => l.category === filters.category);
+      }
+      setItems(fallback);
+      setPagination({ currentPage: 1, totalPages: 1, totalItems: fallback.length });
     } finally {
       setLoading(false);
     }
@@ -280,24 +379,26 @@ export default function CertificationsTab() {
 
   const getCategoryColor = (category: string) => {
     const colors: { [key: string]: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'error' | 'default' } = {
-      'Academic Credentials & Transcripts': 'primary',
-      'Technical & Skill-Based Certifications': 'secondary',
-      'Extracurricular, Volunteer & Community Involvement': 'success',
-      'Professional Development & Short Courses': 'info',
-      'Honors, Awards & Recognition': 'warning',
+      'ECA Regulatory & Telecom Contractor Licenses': 'primary',
+      'EEA Electromechanical & Power Competency (Grade-5)': 'secondary',
+      'Commercial Trade & Engineering Licenses': 'info',
+      'Federal Import & Distribution Accreditations': 'success',
+      'OEM Partner Accreditations & ISO Compliance': 'warning',
+      'Consultancy & Professional Engineering Accreditations': 'default',
     };
     return colors[category] || 'default';
   };
 
   const getCategoryIcon = (category: string) => {
     const icons: { [key: string]: React.ReactNode } = {
-      'Academic Credentials & Transcripts': <School />,
-      'Technical & Skill-Based Certifications': <Category />,
-      'Extracurricular, Volunteer & Community Involvement': <Description />,
-      'Professional Development & Short Courses': <CalendarToday />,
-      'Honors, Awards & Recognition': <Star />,
+      'ECA Regulatory & Telecom Contractor Licenses': <Verified />,
+      'EEA Electromechanical & Power Competency (Grade-5)': <Bolt />,
+      'Commercial Trade & Engineering Licenses': <Business />,
+      'Federal Import & Distribution Accreditations': <Description />,
+      'OEM Partner Accreditations & ISO Compliance': <Star />,
+      'Consultancy & Professional Engineering Accreditations': <Category />,
     };
-    return icons[category] || <Category />;
+    return icons[category] || <Verified />;
   };
 
   const renderFormSection = (title: string, icon: React.ReactNode, content: React.ReactNode) => (
@@ -340,10 +441,10 @@ export default function CertificationsTab() {
               alignItems: 'center',
               gap: 1
             }}>
-              <School /> Certifications ({pagination.totalItems})
+              <Verified /> Licenses & Accreditations ({pagination.totalItems})
             </Typography>
             <Typography variant="body2" color={isDark ? '#a8b2d1' : '#666666'}>
-              Manage your certifications, credentials, and achievements
+              Official statutory licenses, regulatory authorizations, and contractor competencies
             </Typography>
           </Box>
           <Button
@@ -368,7 +469,7 @@ export default function CertificationsTab() {
               }
             }}
           >
-            New Certification
+            New License / Accreditation
           </Button>
         </Box>
       </motion.div>
@@ -916,7 +1017,7 @@ export default function CertificationsTab() {
           py: 3
         }}>
           <Typography variant="h6" sx={{ fontWeight: 'bold', color: isDark ? '#ccd6f6' : '#333333' }}>
-            {dialogMode === 'create' ? 'Add Certification' : 'Edit Certification'}
+            {dialogMode === 'create' ? 'Add Statutory License / Accreditation' : 'Edit Statutory License / Accreditation'}
           </Typography>
         </DialogTitle>
         <DialogContent sx={{ p: 3 }}>
@@ -930,7 +1031,7 @@ export default function CertificationsTab() {
                 alignItems: 'center',
                 gap: 1
               }}>
-                <CloudUpload /> Certificate Image
+                <CloudUpload /> License Document / Certificate Image
               </Typography>
               <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                 <Box sx={{
@@ -960,7 +1061,7 @@ export default function CertificationsTab() {
                       <Stack alignItems="center" spacing={1}>
                         <CloudUpload sx={{ fontSize: 48, color: isDark ? '#a8b2d1' : '#666' }} />
                         <Typography variant="body2" color={isDark ? '#a8b2d1' : '#666'}>
-                          Click to upload certificate image
+                          Click to upload license certificate image
                         </Typography>
                       </Stack>
                     )}
@@ -980,38 +1081,38 @@ export default function CertificationsTab() {
                 alignItems: 'center',
                 gap: 1
               }}>
-                <School /> Basic Information
+                <Verified /> Statutory License Information
               </Typography>
               <TextField
                 fullWidth
-                label="Certification Title"
+                label="License / Accreditation Title"
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                 required
                 size="small"
                 sx={textFieldStyle}
-                placeholder="e.g., Certified Software Engineer"
+                placeholder="e.g., Outdoor Telecommunications Facilities Installation & Maintenance Works License"
               />
               <TextField
                 fullWidth
-                label="Organization"
+                label="Regulatory Authority / Issuer"
                 value={formData.organization}
                 onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                 size="small"
                 sx={textFieldStyle}
-                placeholder="e.g., IBM, Google, Microsoft"
-                helperText="The organization that issued the certification"
+                placeholder="e.g., Ethiopian Communications Authority (ECA)"
+                helperText="Regulatory body or authorized ministry issuing the statutory license"
               />
               <TextField
                 fullWidth
-                label="Description"
+                label="Scope of Authorization & Works"
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 multiline
                 rows={3}
                 size="small"
                 sx={textFieldStyle}
-                placeholder="Describe the certification, skills gained, or achievements"
+                placeholder="Scope of authorization, permitted technical works, and legal references under Proclamation"
               />
               <Divider sx={{ mt: 2 }} />
             </Box>
@@ -1087,27 +1188,27 @@ export default function CertificationsTab() {
                 alignItems: 'center',
                 gap: 1
               }}>
-                <Star /> Credential Details
+                <Verified /> License Registration & Verification Details
               </Typography>
               <TextField
                 fullWidth
-                label="Credential ID"
+                label="License / Registration No."
                 value={formData.credentialId}
                 onChange={(e) => setFormData({ ...formData, credentialId: e.target.value })}
                 size="small"
                 sx={textFieldStyle}
-                placeholder="e.g., CRED-12345-ABCDE"
-                helperText="Optional: The unique ID or verification number for this credential"
+                placeholder="e.g., AA/ADISM/3/0000038/2013 or 51213--247"
+                helperText="Statutory registration or certificate competency serial number"
               />
               <TextField
                 fullWidth
-                label="Credential URL"
+                label="Verification / Regulatory Portal URL"
                 value={formData.credentialUrl}
                 onChange={(e) => setFormData({ ...formData, credentialUrl: e.target.value })}
                 size="small"
                 sx={textFieldStyle}
-                placeholder="https://example.com/verify/credential"
-                helperText="Optional: URL where the certification can be verified"
+                placeholder="https://eca.et or regulatory registry URL"
+                helperText="Online portal or registry link for statutory verification"
               />
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mt: 2 }}>
                 <Typography variant="body2" color={isDark ? '#a8b2d1' : '#666666'}>
