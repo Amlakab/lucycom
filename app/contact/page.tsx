@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
@@ -23,9 +24,10 @@ import {
   FaAward
 } from 'react-icons/fa';
 
-export default function ContactPage() {
+function ContactContent() {
   const { theme } = useTheme();
   const { t, isAmharic } = useLanguage();
+  const searchParams = useSearchParams();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -37,6 +39,31 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [settings, setSettings] = useState<any>(null);
+
+  // Auto-select service from URL query params (e.g. ?service=Data+Center+%26+Datacom)
+  useEffect(() => {
+    const serviceParam = searchParams?.get('service');
+    if (serviceParam) {
+      const validServices = [
+        'Telecom Infrastructure',
+        'Data Center & Datacom',
+        'Smart Education',
+        'Enterprise Security',
+        'Electromechanical & Solar',
+        'ICT Consultancy',
+      ];
+      const match = validServices.find(
+        (s) => s.toLowerCase() === serviceParam.toLowerCase()
+      );
+      if (match) {
+        setFormData((prev) => ({ ...prev, service: match }));
+      }
+      const el = document.getElementById('consultation-form');
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 300);
+      }
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     portfolioApi.getSettings()
@@ -229,7 +256,7 @@ export default function ContactPage() {
         {/* =========================================================================
             CONSULTATION FORM & COMPANY DATA
            ========================================================================= */}
-        <section className={`py-12 sm:py-16 px-4 ${theme === 'dark' ? 'bg-[#112240]/60' : 'bg-slate-50'}`}>
+        <section id="consultation-form" className={`py-12 sm:py-16 px-4 scroll-mt-24 ${theme === 'dark' ? 'bg-[#112240]/60' : 'bg-slate-50'}`}>
           <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               
@@ -398,5 +425,13 @@ export default function ContactPage() {
       <LucyBot />
       <Footer />
     </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-slate-50 dark:bg-[#0a192f]" />}>
+      <ContactContent />
+    </Suspense>
   );
 }
