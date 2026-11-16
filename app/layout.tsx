@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   openGraph: {
-    title: "LUCYCOM TECHNOLOGIES S.C.",
+    title: "Lucycom Technologies S.C.",
     description: "Empowering Ethiopia's Digital Future through World-Class ICT & Telecom Infrastructure.",
     url: "https://www.lucycomtechnologies.com",
     siteName: "LUCYCOM TECHNOLOGIES S.C.",
