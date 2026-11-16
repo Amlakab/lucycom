@@ -188,13 +188,13 @@ export const LucyBot: React.FC = () => {
     ) {
       if (lang === 'am') {
         return {
-          text: '🏛️ **ስለ ሉሲኮም ቴክኖሎጂስ አ.ማ (LUCYCOM TECHNOLOGIES S.C.)**፡\n\nሉሲኮም በኢትዮጵያ ዓለም አቀፍ ደረጃቸውን የጠበቁ፣ አስተማማኝ የICT፣ የቴሌኮም እና የዳታ ሴንተር መሰረተ-ልማቶችን በመንደፍ፣ በማቅረብና በመገንባት ላይ የተሰማራ ቀዳሚ የአክሲዮን ማህበር ነው።\n\n• **መፈክር**፦ «ሉሲ መገኛ፣ ሉሲኮም መዳረሻ»\n• **የህጋዊ ምዝገባ አይነት**፦ የአክሲዮን ማህበር (Share Company)\n• **የተመዘገበ ካፒታል**፦ 2,360,000.00 የኢትዮጵያ ብር\n• **የግብር ከፋይ መለያ (TIN)**፦ 0072480301\n• **ዋና መስሪያ ቤት**፦ አዲስ አበባ፣ የካ ክፍለ ከተማ፣ ወረዳ 08፣ የቤት ቁጥር 158/406\n• **አለም አቀፍ አጋሮች**፦ HUAWEI፣ NOKIA፣ ERICSSON፣ CISCO፣ FORTINET፣ HPE/DELL',
+          text: '🏛️ **ስለ ሉሲኮም ቴክኖሎጂስ አ.ማ (LUCYCOM TECHNOLOGIES S.C.)**፡\n\nሉሲኮም በኢትዮጵያ ዓለም አቀፍ ደረጃቸውን የጠበቁ፣ አስተማማኝ የICT፣ የቴሌኮም እና የዳታ ሴንተር መሰረተ-ልማቶችን በመንደፍ፣ በማቅረብና በመገንባት ላይ የተሰማራ ቀዳሚ የአክሲዮን ማህበር ነው።\n\n• **መፈክር**፦ «ሉሲ መገኛ፣ ሉሲኮም መዳረሻ»\n• **የህጋዊ ምዝገባ አይነት**፦ የአክሲዮን ማህበር (Share Company)\n• **ዋና መስሪያ ቤት**፦ አዲስ አበባ፣ የካ ክፍለ ከተማ፣ ወረዳ 08፣ የቤት ቁጥር 158/406\n• **አለም አቀፍ አጋሮች**፦ HUAWEI፣ NOKIA፣ ERICSSON፣ CISCO፣ FORTINET፣ HPE/DELL',
           action: { text: 'ስለ ድርጅቱ በዝርዝር ይመልከቱ', href: '/about' },
           options: ['ምን አይነት አገልግሎት ትሰጣላችሁ?', 'የተጠናቀቁ ፕሮጀክቶች', 'ህጋዊ ፈቃዶች', 'ቢሮአችሁ የት ነው?'],
         };
       }
       return {
-        text: '🏛️ **About LUCYCOM TECHNOLOGIES S.C.**:\n\nLUCYCOM TECHNOLOGIES S.C. is a premier Ethiopian share company dedicated to designing, supplying, building, and maintaining resilient, scalable, and carrier-grade ICT and telecom infrastructure across Ethiopia.\n\n• **Corporate Motto**: *"Lucy the origin, LucyCom the destination"*\n• **Entity Type**: Registered Share Company (S.C.)\n• **Share Capital**: 2,360,000.00 ETB\n• **Tax Identification (TIN)**: 0072480301\n• **Corporate Headquarters**: Yeka Sub-City, Woreda 08, House No. 158/406, Addis Ababa, Ethiopia\n• **OEM Partners**: HUAWEI, NOKIA, ERICSSON, CISCO, FORTINET, HPE/DELL, OS-EASY\n\nWe pair certified local engineers with global standard technologies compliant with ECA regulations and IEEE/TIA-942 specifications.',
+        text: '🏛️ **About LUCYCOM TECHNOLOGIES S.C.**:\n\nLUCYCOM TECHNOLOGIES S.C. is a premier Ethiopian share company dedicated to designing, supplying, building, and maintaining resilient, scalable, and carrier-grade ICT and telecom infrastructure across Ethiopia.\n\n• **Corporate Motto**: *"Lucy the origin, LucyCom the destination"*\n• **Entity Type**: Registered Share Company (S.C.)\n• **Corporate Headquarters**: Yeka Sub-City, Woreda 08, House No. 158/406, Addis Ababa, Ethiopia\n• **OEM Partners**: HUAWEI, NOKIA, ERICSSON, CISCO, FORTINET, HPE/DELL, OS-EASY\n\nWe pair certified local engineers with global standard technologies compliant with ECA regulations and IEEE/TIA-942 specifications.',
         action: { text: 'Learn More About Us', href: '/about' },
         options: ['What services do you provide?', 'Completed projects', 'What licenses do you hold?', 'Where is your office?'],
       };
@@ -394,13 +394,13 @@ export const LucyBot: React.FC = () => {
     ) {
       if (lang === 'am') {
         return {
-          text: '📜 **ህጋዊ ምዝገባዎች እና ይፋዊ ፈቃዶች (Official Licenses)**፦\n\nሉሲኮም ቴክኖሎጂስ አ.ማ ሙሉ በሙሉ በኢትዮጵያ ህግ መሰረት የተመዘገበና ፍቃድ ያለው ተቋም ነው፡\n\n1. **የኢትዮጵያ ኮሙኒኬሽን ባለስልጣን (ECA)**፦ የውጭ ቴሌኮሙኒኬሽን መገልገያዎች ተከላና ጥገና ስራ ፈቃድ (አዋጅ 1148/2011)።\n2. **የኢትዮጵያ ኤነርጂ ባለስልጣን (EEA)**፦ የኤሌክትሮሜካኒካል ስራ ተቋራጭ ደረጃ-5 የሙያ ብቃት ማረጋገጫ (አዋጅ 686/2002)።\n3. **የአዲስ አበባ ንግድ ቢሮ ፈቃዶች**፦ የኮምፒውተር ኔትወርክ ዲዛይን (ኮድ 85121)፣ የICT ማማከር (ኮድ 86521)፣ የሶፍትዌር ማበልጸግ (ኮድ 39141)።\n4. **የንግድና ቀጠናዊ ትስስር ሚኒስቴር**፦ የኮሙኒኬሽንና ኮምፒውተር እቃዎች አስመጪነት ፈቃድ (ኮድ 65721)።\n• **TIN ቁጥር**፦ 0072480301\n• **የአክሲዮን ካፒታል**፦ 2,360,000.00 የኢትዮጵያ ብር',
+          text: '📜 **ህጋዊ ምዝገባዎች እና ይፋዊ ፈቃዶች (Official Licenses)**፦\n\nሉሲኮም ቴክኖሎጂስ አ.ማ ሙሉ በሙሉ በኢትዮጵያ ህግ መሰረት የተመዘገበና ፍቃድ ያለው ተቋም ነው፡\n\n1. **የኢትዮጵያ ኮሙኒኬሽን ባለስልጣን (ECA)**፦ የውጭ ቴሌኮሙኒኬሽን መገልገያዎች ተከላና ጥገና ስራ ፈቃድ (አዋጅ 1148/2011)።\n2. **የኢትዮጵያ ኤነርጂ ባለስልጣን (EEA)**፦ የኤሌክትሮሜካኒካል ስራ ተቋራጭ ደረጃ-5 የሙያ ብቃት ማረጋገጫ (አዋጅ 686/2002)።\n3. **የአዲስ አበባ ንግድ ቢሮ ፈቃዶች**፦ የኮምፒውተር ኔትወርክ ዲዛይን (ኮድ 85121)፣ የICT ማማከር (ኮድ 86521)፣ የሶፍትዌር ማበልጸግ (ኮድ 39141)።\n4. **የንግድና ቀጠናዊ ትስስር ሚኒስቴር**፦ የኮሙኒኬሽንና ኮምፒውተር እቃዎች አስመጪነት ፈቃድ (ኮድ 65721)።',
           action: { text: 'ህጋዊ ፈቃዶችን በሙሉ ይመልከቱ', href: '/licenses' },
           options: ['ስለ ሉሲኮም ንገሩኝ', 'የተጠናቀቁ ፕሮጀክቶች', 'የዋጋ መጠየቂያ'],
         };
       }
       return {
-        text: '📜 **Statutory Accreditations & Official Licenses**:\n\nLUCYCOM TECHNOLOGIES S.C. operates with full statutory compliance under the commercial laws of Ethiopia:\n\n1. **Ethiopian Communications Authority (ECA)**: Outdoor Telecommunications Facilities Installation & Maintenance Works License (Proclamation No. 1148/2019).\n2. **Ethiopian Energy Authority (EEA)**: Electromechanical Contractor Grade-Five Competency Certificate (Proclamation No. 686/2010).\n3. **City Administration Trade Bureau**: Computer Network Design & Cable Installation (Code: 85121), ICT Consultancy (Code: 86521), Software Development (Code: 39141).\n4. **Ministry of Trade and Regional Integration**: Import Trade in Communication & Computer Equipment (Code: 65721).\n• **TIN**: 0072480301 | **Share Capital**: 2,360,000.00 ETB',
+        text: '📜 **Statutory Accreditations & Official Licenses**:\n\nLUCYCOM TECHNOLOGIES S.C. operates with full statutory compliance under the commercial laws of Ethiopia:\n\n1. **Ethiopian Communications Authority (ECA)**: Outdoor Telecommunications Facilities Installation & Maintenance Works License (Proclamation No. 1148/2019).\n2. **Ethiopian Energy Authority (EEA)**: Electromechanical Contractor Grade-Five Competency Certificate (Proclamation No. 686/2010).\n3. **City Administration Trade Bureau**: Computer Network Design & Cable Installation (Code: 85121), ICT Consultancy (Code: 86521), Software Development (Code: 39141).\n4. **Ministry of Trade and Regional Integration**: Import Trade in Communication & Computer Equipment (Code: 65721).',
         action: { text: 'View Official Licenses', href: '/licenses' },
         options: ['Tell me about Lucycom', 'Completed projects', 'Request tender pack'],
       };

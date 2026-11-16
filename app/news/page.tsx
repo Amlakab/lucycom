@@ -58,7 +58,7 @@ const LUCYCOM_NEWS_ITEMS: NewsItem[] = [
     date: 'February 20, 2026',
     readTime: '4 min read',
     author: 'Telecom Engineering Desk',
-    image: '/INSA/image21.jpg',
+    image: '/images/lucycom/news-telecom-5g-milestone.jpg',
     featured: true,
     tags: ['Telecom', '4G/5G', 'Tower Erection', 'Drive Test'],
     excerpt: 'Engineering teams celebrate the milestone completion of BTS base station installations, heavy mast erections up to 60m, and microwave alignments across regional clusters with a 99.8% quality pass rate.',
@@ -91,7 +91,7 @@ Lucycom continues to drive carrier-grade connectivity, pairing certified local r
     date: 'February 08, 2026',
     readTime: '5 min read',
     author: 'Datacom Division',
-    image: '/INSA/image22.jpg',
+    image: '/images/lucycom/news-tier3-datacenter-delivery.jpg',
     tags: ['Data Center', 'Tier III', 'Cooling', 'UPS'],
     excerpt: 'The turnkey project features in-row precision CRAC cooling, modular N+1 online UPS, hot-aisle containment, and certified Cat6A / OM4 structured cabling.',
     excerptAm: 'የተጠናቀቀው ፕሮጀክት ትክክለኛ የኢን-ሮው CRAC ማቀዝቀዣ፣ ሞጁላር N+1 ዩፒኤስ፣ የሆት-አይል ማቆያ እና የተረጋገጠ የፋይበር ኔትወርክ ዝርጋታን ያካተተ ነው።',
@@ -123,7 +123,7 @@ This deployment guarantees 99.982% uptime for mission-critical academic services
     date: 'January 28, 2026',
     readTime: '3 min read',
     author: 'Educational Technology Team',
-    image: '/INSA/image15.jpg',
+    image: '/images/lucycom/news-university-smart-vdi.jpg',
     tags: ['Smart Education', 'VDI', 'Interactive Boards', 'E-Learning'],
     excerpt: 'Replacing fragile physical desktop towers with centralized cloud VDI thin clients and 86-inch 4K collaborative interactive touch displays.',
     excerptAm: 'የድሮ የዴስክቶፕ ኮምፒውተሮችን በማዕከላዊ የVDI ደመና ሰርቨሮች እና በ86 ኢንች 4K ስማርት ቦርዶች በመተካት ዘመናዊ የመማሪያ አከባቢ ተፈጠረ።',
@@ -151,7 +151,7 @@ Impact of Modernization:
     date: 'January 15, 2026',
     readTime: '4 min read',
     author: 'Enterprise Security Division',
-    image: '/INSA/image1.jpg',
+    image: '/images/lucycom/news-industrial-perimeter-cctv.jpg',
     tags: ['AI CCTV', 'Perimeter Defense', 'Next-Gen Firewall', 'VMS'],
     excerpt: 'Over 250 AI-enabled IP surveillance cameras integrated with automated tripwire intrusion detection and central video monitoring command centers.',
     excerptAm: '250+ የAI ካሜራዎች ከማዕከላዊ የቁጥጥር ማዕከል ጋር ተገናኝተው የድንበር ጥሰቶችን በራስ-ሰር የሚያሳውቁ ተተክለዋል።',
@@ -179,7 +179,7 @@ Solution Overview:
     date: 'January 05, 2026',
     readTime: '3 min read',
     author: 'Corporate Legal Desk',
-    image: '/INSA/image12.jpg',
+    image: '/images/lucycom/news-fortinet-partnership.jpg',
     tags: ['Licenses', 'ECA', 'Energy Authority', 'Compliance'],
     excerpt: 'Statutory accreditations renewed under Communications Service Proclamation No. 1148/2019 and Energy Proclamation No. 686/2010 affirming commercial bidding qualification.',
     excerptAm: 'በኮሙኒኬሽን አገልግሎት አዋጅ ቁጥር 1148/2011 እና በኢነርጂ አዋጅ ቁጥር 686/2002 መሰረት የተሰጡ ህጋዊ ፈቃዶች መታደሳቸው ተረጋገጠ።',
@@ -189,7 +189,7 @@ Accreditations In Force:
 1. ECA License (AA/ADISM/3/0000038/2013): Outdoor Telecommunications Facilities Installation & Maintenance Works License under Proclamation No. 1148/2019.
 2. EEA Competency (51213--247): Electromechanical Contractor Grade-Five Competency Certificate under Proclamation No. 686/2010.
 3. City Trade Bureau Licenses: Computer Network Design (Code: 85121), ICT Consultancy (Code: 86521), Software Development (Code: 39141).
-4. Capital & Tax Standing: Registered share company capital of 2,360,000.00 ETB and active tax compliance under TIN 0072480301.
+4. Ministry of Trade & Regional Integration: Registered Commercial Importer of Communication & Computing Technologies (Code: 65721).
 
 This solid legal standing guarantees corporate and government clients absolute confidence in our contractual capability.`,
     contentAm: `ሉሲኮም ቴክኖሎጂስ አ.ማ ከኢትዮጵያ ኮሙኒኬሽን ባለስልጣን (ECA) እና ከኢትዮጵያ ኢነርጂ ባለስልጣን (EEA) ጋር ያለውን አመታዊ ህጋዊ የብቃት ማረጋገጫና ፍተሻ በስኬት አጠናቋል።
@@ -198,7 +198,7 @@ This solid legal standing guarantees corporate and government clients absolute c
 1. የECA ፈቃድ (AA/ADISM/3/0000038/2013)፡ የውጭ ቴሌኮሙኒኬሽን መሰረተ-ልማት ተከላና ጥገና ስራ ፈቃድ (አዋጅ 1148/2011)።
 2. የEEA የብቃት ማረጋገጫ (51213--247)፡ የኤሌክትሮሜካኒካል ተቋራጭ ደረጃ አምስት (Grade-5) የብቃት ማረጋገጫ (አዋጅ 686/2010)።
 3. የንግድ ቢሮ ፈቃዶች፡ የኮምፒውተር ኔትወርክ ዲዛይን (ኮድ 85121)፣ የICT ማማከር (ኮድ 86521)፣ የሶፍትዌር ማበልጸግ (ኮድ 39141)።
-4. ካፒታል እና ግብር፡ የተመዘገበ 2,360,000.00 ብር ካፒታል እና ህጋዊ የTIN ቁጥር (0072480301)።
+4. የንግድና ቀጠናዊ ትስስር ሚኒስቴር፡ የኮሙኒኬሽንና ኮምፒውተር እቃዎች አስመጪነት ፈቃድ (ኮድ 65721)።
 
 ይህ ህጋዊ አቋም ለድርጅቶችና ለመንግስት ተቋማት የምንሰጠውን አገልግሎት አስተማማኝነት የሚያረጋግጥ ነው።`,
   },
@@ -211,7 +211,7 @@ This solid legal standing guarantees corporate and government clients absolute c
     date: 'December 18, 2025',
     readTime: '3 min read',
     author: 'Global Partnerships Lead',
-    image: '/INSA/image11.jpg',
+    image: '/images/lucycom/news-green-energy-telecom.jpg',
     tags: ['OEM Partners', 'Hardware Import', 'Supply Chain', 'Huawei', 'Cisco'],
     excerpt: 'Strategic relationships with global OEMs (Huawei, Nokia, Cisco, Fortinet, Dell, OS-Easy) guarantee genuine factory hardware with direct warranties.',
     excerptAm: 'ከዓለም መሪ አምራቾች (Huawei, Nokia, Cisco, Fortinet, Dell) ጋር ያለው ቀጥተኛ ትስስር ጥራት ያላቸውን እቃዎች በዋስትና ለማቅረብ ያስችላል።',
@@ -283,7 +283,7 @@ export default function NewsPage() {
         <section className="relative py-16 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/INSA/image21.jpg"
+              src="/images/lucycom/news-hero-banner.jpg"
               alt="Lucycom News & Press Releases"
               fill
               className="object-cover object-center"

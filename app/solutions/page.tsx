@@ -36,7 +36,7 @@ const DEFAULT_SOLUTIONS = [
     shortDescriptionAm: 'የቴሌኮም ማማ ተከላ (እስከ 60ሜ)፣ 4G/5G LTE፣ ማይክሮዌቭ እና የድራይቭ ቴስት ጥራት ማረጋገጫ።',
     description: 'LUCYCOM TECHNOLOGIES S.C. delivers comprehensive telecommunications infrastructure engineering. From greenfield site surveys and mast erection up to 60 meters to 4G/5G LTE radio equipment installation, commissioning, microwave link alignment, and optical fiber backbone splicing. We guarantee SLA-backed operational handovers adhering strictly to ECA standards.',
     icon: <FaNetworkWired />,
-    image: '/INSA/image21.jpg',
+    image: '/images/lucycom/solution-telecom-services.jpg',
     features: [
       'Telecom Tower Mast Erection (up to 60m)',
       '4G/5G LTE Radio Access Installation & Commissioning',
@@ -55,7 +55,7 @@ const DEFAULT_SOLUTIONS = [
     shortDescriptionAm: 'ትክክለኛ ማቀዝቀዣ (Precision Cooling)፣ ሞጁላር ዩፒኤስ (UPS) እና የፋይበር ኔትወርክ ዝርጋታ።',
     description: 'We engineer turnkey mission-critical data center facilities complying with TIA-942 and Uptime Institute standards. Lucycom delivers complete physical containment, precision CRAC cooling with hot/cold aisle isolation, modular N+1 uninterruptible power systems (UPS), automated diesel backup generators, and structured Cat6A/Cat7 copper and MPO optical fiber backbone distribution.',
     icon: <FaServer />,
-    image: '/INSA/image22.jpg',
+    image: '/images/lucycom/solution-datacenter-datacom.jpg',
     features: [
       'Tier II & Tier III Compliant Physical Architecture',
       'Precision In-Row CRAC Air Conditioning & Containment',
@@ -74,7 +74,7 @@ const DEFAULT_SOLUTIONS = [
     shortDescriptionAm: '4K በይነ-መረብ ስማርት ቦርዶች፣ አውቶሜትድ ሌክቸር ቀረጻ እና ደመና-ተኮር VDI ላብራቶሪ።',
     description: 'Empowering universities, colleges, and secondary institutions with modern smart learning environments. Our solutions feature 4K interactive smart touch panels, automated AI tracking lecture capture pods, digital speaker podiums, centralized e-learning content servers, and OS-Easy powered Virtual Desktop Infrastructure (VDI) computer laboratories that reduce PC maintenance costs by 70%.',
     icon: <FaGraduationCap />,
-    image: '/INSA/image15.jpg',
+    image: '/images/lucycom/solution-smart-classroom.jpg',
     features: [
       'Interactive Smart Flat Panels & Digital Podiums',
       'Automated Multi-Angle Lecture Recording Systems',
@@ -93,7 +93,7 @@ const DEFAULT_SOLUTIONS = [
     shortDescriptionAm: 'Next-Gen Firewalls፣ ፊት ለይተው የሚያውቁ AI ካሜራዎች እና የዙሪያ ጥበቃ ስርዓት።',
     description: 'Enterprise-grade physical and digital defense architectures designed for financial institutions, government complexes, and large-scale industrial facilities. We deploy high-resolution IP surveillance cameras with edge neural analytics, automated perimeter fence tripwire alerts, centralized video management walls (VMS), biometric access control gates, and Fortinet/Cisco Next-Gen Firewalls.',
     icon: <FaShieldAlt />,
-    image: '/INSA/image1.jpg',
+    image: '/images/lucycom/solution-cctv-security.jpg',
     features: [
       'AI Face Recognition & High-Definition IP Surveillance',
       'Automated Perimeter Intrusion & Tripwire Alert Systems',
@@ -112,7 +112,7 @@ const DEFAULT_SOLUTIONS = [
     shortDescriptionAm: 'ከባድ ኢንዱስትሪያል ጀነሬተሮች፣ አውቶሜትድ ATS ስዊች እና አስተማማኝ የፀሐይ ሃይል ስርዓቶች።',
     description: 'Uninterrupted power infrastructure is the lifeblood of critical ICT. Lucycom engineers industrial diesel generators, automated transfer switches (ATS), comprehensive lightning and copper earthing grids, and clean hybrid solar photovoltaic systems with high-cycle lithium energy storage.',
     icon: <FaBolt />,
-    image: '/INSA/image18.jpg',
+    image: '/images/lucycom/solution-electromechanical.jpg',
     features: [
       'Heavy Industrial Diesel Generator Provisioning & Sync',
       'Automated Transfer Switches (ATS) & Main Distribution Boards',
@@ -131,7 +131,7 @@ const DEFAULT_SOLUTIONS = [
     shortDescriptionAm: 'የኔትወርክ አፈጻጸም እና ደህንነት ኦዲት፣ የRFP ዝግጅት እና የ24/7 የጥገና ድጋፍ ስምምነት።',
     description: 'We guide public enterprises and corporate leaders through complex digital transformation roadmaps. Our senior consultants deliver objective network vulnerability assessments, RFP preparation, BOQ architectural reviews, and 24/7 SLA preventative maintenance agreements.',
     icon: <FaTools />,
-    image: '/INSA/image11.jpg',
+    image: '/images/lucycom/solution-ict-infrastructure.jpg',
     features: [
       'Network Architecture & Security Vulnerability Auditing',
       'Technical Feasibility Studies & Tender BOQ Formulation',
@@ -183,7 +183,7 @@ export default function SolutionsPage() {
         <section className="relative py-16 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/INSA/image1.jpg"
+              src="/images/lucycom/solutions-hero-banner.jpg"
               alt="Lucycom Enterprise Solutions"
               fill
               className="object-cover object-center"

@@ -72,7 +72,7 @@ export default function PartnersPage() {
         <section className="relative py-16 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/INSA/image11.jpg"
+              src="/images/lucycom/partners-global-ecosystem.jpg"
               alt="Lucycom Global Partners"
               fill
               className="object-cover object-center"

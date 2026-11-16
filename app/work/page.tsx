@@ -33,7 +33,7 @@ const LUCYCOM_DEFAULT_PROJECTS = [
     descriptionAm: 'በ120+ ሳይቶች ላይ የሲቪል ስራዎች፣ የማማ ተከላ (እስከ 60ሜ)፣ 4G/5G እና የድራይቭ ቴስት ጥራት ማረጋገጫ በ99.8% ማለፊያ ውጤት ተከናውኗል።',
     tags: ['4G/5G LTE', 'RF Optimization', 'Microwave', 'Mast Erection'],
     category: 'TELECOM',
-    image: '/INSA/image21.jpg',
+    image: '/images/lucycom/project-telecom-rollout-120.jpg',
     client: 'National Telecom Operators & OEMs',
   },
   {
@@ -44,7 +44,7 @@ const LUCYCOM_DEFAULT_PROJECTS = [
     descriptionAm: 'ከፍተኛ ፍጥነት ያለው የፋይበር ኦፕቲክ ኔትወርክ፣ የትክክለኛ ማቀዝቀዣ (CRAC) እና ሞጁላር የዩፒኤስ ሃይል አቅርቦት ተከላ።',
     tags: ['Tier II/III', 'Structured Cabling', 'CRAC Cooling', 'Modular UPS'],
     category: 'DATACENTER',
-    image: '/INSA/image22.jpg',
+    image: '/images/lucycom/project-university-datacenter.jpg',
     client: 'Higher Education & Research Institutes',
   },
   {
@@ -55,7 +55,7 @@ const LUCYCOM_DEFAULT_PROJECTS = [
     descriptionAm: '4K በይነ-መረብ ስማርት ፓነሎች፣ አውቶሜትድ የትምህርት ቀረጻ እና ደመና-ተኮር ቨርቹዋል ዴስክቶፕ (VDI) ላብራቶሪ ተከላ።',
     tags: ['VDI Thin Clients', '4K Smart Panels', 'Lecture Capture', 'Campus AV'],
     category: 'EDUCATION',
-    image: '/INSA/image15.jpg',
+    image: '/images/lucycom/project-smart-classroom-deployment.jpg',
     client: 'Educational & Vocational Colleges',
   },
   {
@@ -66,7 +66,7 @@ const LUCYCOM_DEFAULT_PROJECTS = [
     descriptionAm: 'ከ250 በላይ ሰው ለይተው የሚያውቁ AI ካሜራዎች፣ ማዕከላዊ የቁጥጥር ክፍል እና አውቶሜትድ የደህንነት ስርዓት ዝርጋታ።',
     tags: ['AI CCTV', 'VMS Video Wall', 'Perimeter Radar', 'Facial Recognition'],
     category: 'SECURITY',
-    image: '/INSA/image1.jpg',
+    image: '/images/lucycom/project-enterprise-ai-cctv.jpg',
     client: 'Government Complexes & Financial Facilities',
   },
   {
@@ -77,7 +77,7 @@ const LUCYCOM_DEFAULT_PROJECTS = [
     descriptionAm: 'የተሟላ የNext-Gen Firewall ደህንነት፣ ባለብዙ ቅርንጫፍ የVPN ትስስር እና የጸረ-ጥቃት ቁጥጥር ስርዓት።',
     tags: ['NGFW', 'Zero-Trust', 'Fortinet / Cisco', 'IPSec VPN'],
     category: 'SECURITY',
-    image: '/INSA/image11.jpg',
+    image: '/images/lucycom/project-fintech-ngfw.jpg',
     client: 'Financial & Enterprise Institutions',
   },
   {
@@ -88,7 +88,7 @@ const LUCYCOM_DEFAULT_PROJECTS = [
     descriptionAm: 'ከባድ የዲዝል ጀነሬተሮች፣ አውቶሜትድ የትራንስፈር ስዊች እና የፀሐይ ሃይል ማመንጫ ስርዓቶች ተከላ።',
     tags: ['Industrial Generators', 'ATS Panels', 'Surge Earthing', 'Solar PV'],
     category: 'POWER',
-    image: '/INSA/image18.jpg',
+    image: '/images/lucycom/project-industrial-power-backup.jpg',
     client: 'Telecom Hubs & Enterprise Campuses',
   },
 ];
@@ -137,7 +137,7 @@ export default function WorkPage() {
         <section className="relative py-16 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/INSA/image21.jpg"
+              src="/images/lucycom/work-hero-banner.jpg"
               alt="Lucycom Projects Showcase"
               fill
               className="object-cover object-center"
@@ -217,7 +217,7 @@ export default function WorkPage() {
                     {/* Project Image */}
                     <div className="relative h-48 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
                       <Image
-                        src={proj.image || '/INSA/image21.jpg'}
+                        src={proj.image || '/images/lucycom/project-telecom-rollout-120.jpg'}
                         alt={proj.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"

@@ -15,7 +15,7 @@ const documents = [
     title: 'Secure Website Management Standard',
     description: 'This document outlines the standards for managing secure websites, ensuring compliance with national cybersecurity guidelines.',
     downloadLink: '/documents/Document1.pdf',
-    image: '/images/image23.jpg',
+    image: '/images/lucycom/document-technical-whitepaper.jpg',
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const documents = [
     title: 'National Cyber Security Framework Development Methodology',
     description: 'Methodology for developing a national cybersecurity framework, aimed at enhancing the country\'s cybersecurity posture.',
     downloadLink: '/documents/Document3.pdf',
-    image: '/images/image22.jpg',
+    image: '/images/lucycom/document-compliance-brochure.jpg',
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const documents = [
     title: 'VRC-R (VRC_RJY)++ A(M_ATC)*',
     description: 'Technical documentation for the VRC-R system, detailing its architecture, components, and operational protocols.',
     downloadLink: '/documents/Document5.pdf',
-    image: '/images/image22.jpg',
+    image: '/images/lucycom/document-solution-matrix.jpg',
   },
 ];
 
@@ -142,7 +142,7 @@ export default function DocumentPage() {
                   >
                     <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-xl">
                       <Image
-                        src={doc.image || '/images/image22.jpg'}
+                        src={doc.image || '/images/lucycom/document-technical-whitepaper.jpg'}
                         alt={doc.title}
                         fill
                         className="object-cover"
@@ -196,7 +196,7 @@ export default function DocumentPage() {
                   >
                     <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-xl">
                       <Image
-                        src={doc.image || '/images/image22.jpg'}
+                        src={doc.image || '/images/lucycom/document-technical-whitepaper.jpg'}
                         alt={doc.title}
                         fill
                         className="object-cover"

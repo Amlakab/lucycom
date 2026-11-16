@@ -5,6 +5,7 @@ import { Box, Tabs, Tab, Typography, useMediaQuery, Paper } from '@mui/material'
 import { useTheme } from '@/lib/theme-context';
 import { useSearchParams, useRouter } from 'next/navigation';
 import SolutionsTab from '@/components/admin/portfolio/SolutionsTab';
+import ProductsTab from '@/components/admin/portfolio/ProductsTab';
 import PartnersTab from '@/components/admin/portfolio/PartnersTab';
 import ProjectsTab from '@/components/admin/portfolio/ProjectsTab';
 import CertificationsTab from '@/components/admin/portfolio/CertificationsTab';
@@ -13,7 +14,7 @@ import BlogTab from '@/components/admin/portfolio/BlogTab';
 import SettingsTab from '@/components/admin/portfolio/SettingsTab';
 import { 
   Folder, FormatQuote, Article, Settings,
-  Dashboard, Handshake, SettingsInputAntenna, Verified
+  Dashboard, Handshake, SettingsInputAntenna, Verified, Category
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 
@@ -27,22 +28,24 @@ export default function PortfolioAdmin() {
 
   const tabMap: { [key: string]: number } = {
     'solutions': 0,
-    'partners': 1,
-    'projects': 2,
-    'certifications': 3,
-    'testimonials': 4,
-    'blog': 5,
-    'settings': 6,
+    'products': 1,
+    'partners': 2,
+    'projects': 3,
+    'certifications': 4,
+    'testimonials': 5,
+    'blog': 6,
+    'settings': 7,
     // Fallbacks
     'experiences': 0,
     'educations': 0,
-    'skills': 1,
+    'skills': 2,
   };
 
-  const tabNames = ['solutions', 'partners', 'projects', 'certifications', 'testimonials', 'blog', 'settings'];
+  const tabNames = ['solutions', 'products', 'partners', 'projects', 'certifications', 'testimonials', 'blog', 'settings'];
 
   const tabs = [
     { label: 'Solutions', icon: <SettingsInputAntenna />, component: <SolutionsTab /> },
+    { label: 'Products', icon: <Category />, component: <ProductsTab /> },
     { label: 'Partners', icon: <Handshake />, component: <PartnersTab /> },
     { label: 'Projects', icon: <Folder />, component: <ProjectsTab /> },
     { label: 'Certifications & Licenses', icon: <Verified />, component: <CertificationsTab /> },
@@ -221,7 +224,7 @@ export default function PortfolioAdmin() {
               LUCYCOM TECHNOLOGIES S.C. Portal v2.0 • Addis Ababa, Ethiopia
             </Typography>
             <Typography variant="caption" sx={{ color: '#0EA5E9', fontWeight: 600 }}>
-              TIN: 0072480301 • ECA & EEA Certified
+              Carrier-Grade ICT & Telecom Infrastructure • ECA & EEA Certified
             </Typography>
           </Box>
         </Paper>

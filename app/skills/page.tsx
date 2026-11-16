@@ -118,7 +118,7 @@ export default function SkillsPage() {
         <section className="relative py-16 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/INSA/image15.jpg"
+              src="/images/lucycom/skills-engineering-certifications.jpg"
               alt="Lucycom Technical Capabilities"
               fill
               className="object-cover object-center"

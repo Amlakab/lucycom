@@ -28,7 +28,8 @@ import {
   FaHandshake,
   FaCertificate,
   FaHome,
-  FaNewspaper
+  FaNewspaper,
+  FaBox
 } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
@@ -82,6 +83,7 @@ const Footer: React.FC = () => {
     { icon: <FaHome />, title: t('nav.home', 'Home'), href: '/' },
     { icon: <FaInfoCircle />, title: t('nav.about', 'About Us'), href: '/about' },
     { icon: <FaNetworkWired />, title: t('nav.solutions', 'Solutions'), href: '/solutions' },
+    { icon: <FaBox />, title: isAmharic ? 'ምርቶች' : 'Products', href: '/products' },
     { icon: <FaProjectDiagram />, title: t('nav.projects', 'Projects'), href: '/projects' },
     { icon: <FaHandshake />, title: t('nav.partners', 'Partners'), href: '/partners' },
     { icon: <FaCertificate />, title: isAmharic ? 'ፈቃዶች' : 'Licenses', href: '/licenses' },

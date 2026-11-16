@@ -122,7 +122,7 @@ export default function LicensesPage() {
         <section className="relative py-16 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/INSA/image12.jpg"
+              src="/images/lucycom/licenses-statutory-compliance.jpg"
               alt="Lucycom Licenses & Accreditations"
               fill
               className="object-cover object-center"
@@ -243,12 +243,12 @@ export default function LicensesPage() {
                   <p className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white mt-1">LUCYCOM TECHNOLOGIES S.C.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-white dark:bg-[#0a192f] border border-gray-200 dark:border-slate-800">
-                  <p className="text-xs text-gray-500 dark:text-gray-400">Authorized Capital</p>
-                  <p className="text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400 mt-1">2,360,000.00 ETB</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">Corporate Status</p>
+                  <p className="text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400 mt-1">Registered Share Company (S.C.)</p>
                 </div>
                 <div className="p-4 rounded-xl bg-white dark:bg-[#0a192f] border border-gray-200 dark:border-slate-800">
-                  <p className="text-xs text-gray-500 dark:text-gray-400">Tax Identification (TIN)</p>
-                  <p className="text-xs sm:text-sm font-mono font-bold text-gray-900 dark:text-white mt-1">0072480301</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">Regulatory Compliance</p>
+                  <p className="text-xs sm:text-sm font-bold text-green-600 dark:text-green-400 mt-1">ECA & EEA Certified</p>
                 </div>
                 <div className="p-4 rounded-xl bg-white dark:bg-[#0a192f] border border-gray-200 dark:border-slate-800">
                   <p className="text-xs text-gray-500 dark:text-gray-400">Headquarters</p>

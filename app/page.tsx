@@ -74,7 +74,7 @@ export default function Home() {
   // Hero Carousel Slides
   const heroSlides = [
     {
-      image: (settings?.hero?.profileImages && settings.hero.profileImages[0]) || '/INSA/image1.jpg',
+      image: (settings?.hero?.profileImages && settings.hero.profileImages[0]) || '/images/lucycom/home-hero-carrier-grade.jpg',
       badge: isAmharic 
         ? (settings?.company?.sloganAmharic || 'ሉሲ መገኛ፣ ሉሲኮም መዳረሻ') 
         : (settings?.company?.slogan || 'Lucy the origin, LucyCom the destination'),
@@ -90,7 +90,7 @@ export default function Home() {
       secondaryLink: settings?.company?.profileBrochureUrl || settings?.hero?.resumeUrl || '/documents/LUCYCOM_Company_Profile.pdf',
     },
     {
-      image: '/INSA/image21.jpg',
+      image: '/images/lucycom/telecom-tower-rollout.jpg',
       badge: isAmharic ? 'የቴሌኮም መሰረተ-ልማት' : 'Turnkey Telecom Rollout',
       title: isAmharic
         ? 'ዘመናዊ የቴሌኮም ማማዎችና የኔትወርክ ዝርጋታ'
@@ -104,7 +104,7 @@ export default function Home() {
       secondaryLink: '/contact',
     },
     {
-      image: '/INSA/image22.jpg',
+      image: '/images/lucycom/datacenter-server-hall.jpg',
       badge: isAmharic ? 'ዳታ ሴንተር እና ዳታኮም' : 'Mission-Critical Facilities',
       title: isAmharic
         ? 'ደረጃቸውን የጠበቁ Tier II & III ዳታ ሴንተሮች'
@@ -118,7 +118,7 @@ export default function Home() {
       secondaryLink: '/contact',
     },
     {
-      image: '/INSA/image15.jpg',
+      image: '/images/lucycom/smart-classroom-modern.jpg',
       badge: isAmharic ? 'ዘመናዊ ትምህርት እና ሳይበር ደህንነት' : 'Smart Ed & Cyber Defense',
       title: isAmharic
         ? 'ዘመናዊ የመማሪያ ክፍሎች እና AI የደህንነት ቅኝት'
@@ -165,7 +165,7 @@ export default function Home() {
         isAmharic ? '99.8% የድራይቭ ቴስት ማለፊያ' : '99.8% Drive Test Pass Rate',
         isAmharic ? 'የተረጋገጠ የስራ ላይ ደህንነት' : 'Certified Rigging Safety Standards',
       ],
-      image: '/INSA/image21.jpg',
+      image: '/images/lucycom/home-solution-telecom.jpg',
       badge: isAmharic ? 'ቴሌኮም' : 'Telecom',
     },
     {
@@ -182,7 +182,7 @@ export default function Home() {
         isAmharic ? 'ሞጁላር ዩፒኤስ እና የሃይል ማከፋፈያ' : 'Modular N+1 Redundant UPS',
         isAmharic ? 'የፋይበር ኦፕቲክ ባክቦን' : 'High-Speed OM4/OS2 Fiber Optic',
       ],
-      image: '/INSA/image22.jpg',
+      image: '/images/lucycom/home-solution-datacenter.jpg',
       badge: isAmharic ? 'ዳታ ሴንተር' : 'Data Center',
     },
     {
@@ -199,7 +199,7 @@ export default function Home() {
         isAmharic ? 'VDI ቨርቹዋል ዴስክቶፕ ላብ' : 'Cost-Effective VDI Thin Clients',
         isAmharic ? 'የትምህርት ቤት አስተዳደር ሲስተም' : 'Centralized Classroom Management',
       ],
-      image: '/INSA/image15.jpg',
+      image: '/images/lucycom/smart-education-flat-panel.jpg',
       badge: isAmharic ? 'ስማርት ትምህርት' : 'Smart Ed',
     },
     {
@@ -216,7 +216,7 @@ export default function Home() {
         isAmharic ? 'የዙሪያ ጥበቃ ኢንትሩዥን ዳሳሽ' : 'Optical & Thermal Perimeter Radar',
         isAmharic ? '24/7 የደህንነት ኦፕሬሽን ማዕከል' : 'Central Video Management (VMS)',
       ],
-      image: '/INSA/image1.jpg',
+      image: '/images/lucycom/home-solution-security.jpg',
       badge: isAmharic ? 'ደህንነት' : 'Security',
     },
     {
@@ -233,7 +233,7 @@ export default function Home() {
         isAmharic ? 'አውቶሜትድ ATS ስዊች' : 'Seamless Automated Transfer Switches',
         isAmharic ? 'የኤሌክትሪክ ሰርጅ መከላከያ' : 'Surge & Lightning Grounding Systems',
       ],
-      image: '/INSA/image18.jpg',
+      image: '/images/lucycom/electromechanical-diesel-generator.jpg',
       badge: isAmharic ? 'ኤሌክትሮሜካኒካል' : 'Power & Solar',
     },
     {
@@ -250,7 +250,7 @@ export default function Home() {
         isAmharic ? 'የSLA ድጋፍ እና ጥገና' : '24/7 SLA Maintenance Agreements',
         isAmharic ? 'የሰው ሃይል ስልጠና እና ማብቃት' : 'Technical Staff Certification Training',
       ],
-      image: '/INSA/image11.jpg',
+      image: '/images/lucycom/home-about-delivery.jpg',
       badge: isAmharic ? 'ማማከር' : 'Consulting',
     },
   ];
@@ -902,9 +902,9 @@ export default function Home() {
 
                 <div className="border-t border-gray-100 dark:border-slate-800/80 pt-4">
                   <div className="text-xs text-gray-500 dark:text-gray-400 space-y-1">
-                    <p><strong>TIN:</strong> {settings?.company?.tin || '0072480301'}</p>
-                    <p><strong>Share Capital:</strong> {settings?.company?.capital || '2,360,000.00 ETB'}</p>
-                    <p><strong>Reg:</strong> {settings?.company?.registrationNo || 'Ministry of Trade & Industry, Ethiopia'}</p>
+                    <p><strong>Entity:</strong> Registered Share Company (S.C.)</p>
+                    <p><strong>Licensing:</strong> ECA & EEA Certified Carrier Contractor</p>
+                    <p><strong>HQ:</strong> Addis Ababa, Ethiopia</p>
                   </div>
                 </div>
               </div>

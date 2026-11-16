@@ -110,6 +110,13 @@ export const portfolioApi = {
       headers: { 'Content-Type': 'multipart/form-data' },
     }),
 
+  // Products
+  getProducts: (params?: any) => api.get('/portfolio/products', { params }),
+  getProductsAdmin: (params?: any) => api.get('/admin/portfolio/products', { params }),
+  createProduct: (data: any) => api.post('/admin/portfolio/products', data),
+  updateProduct: (id: string, data: any) => api.put(`/admin/portfolio/products/${id}`, data),
+  deleteProduct: (id: string) => api.delete(`/admin/portfolio/products/${id}`),
+
   // Legacy compatibility
   getExperiencesAdmin: (params?: any) => api.get('/admin/portfolio/experiences', { params }),
   createExperience: (data: any) => api.post('/admin/portfolio/experiences', data),

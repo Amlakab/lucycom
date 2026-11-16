@@ -10,7 +10,7 @@ import {
   Home, Users, X, Settings, LogOut, ChevronLeft, ChevronRight,
   MessageSquare, Shield, Layers, TrendingUp, Folder, Award,
   FileCheck, ChevronUp, ChevronDown, User as UserIcon, Globe, Sparkles,
-  Building2, Radio, Newspaper, Sliders, Quote
+  Building2, Radio, Newspaper, Sliders, Quote, Package
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Article, FormatQuote, Work } from '@mui/icons-material';
@@ -32,6 +32,7 @@ interface AdminSidebarProps {
 const menuItems: MenuItem[] = [
   { name: 'Dashboard Overview', href: '/admin', icon: Home },
   { name: 'Solutions Pillars', href: '/admin?tab=solutions', tabKey: 'solutions', icon: Radio },
+  { name: 'Products Catalog', href: '/admin?tab=products', tabKey: 'products', icon: Package },
   { name: 'Partners Ecosystem', href: '/admin?tab=partners', tabKey: 'partners', icon: Building2 },
   { name: 'Projects Portfolio', href: '/admin?tab=projects', tabKey: 'projects', icon: Folder },
   { name: 'Certifications & Licenses', href: '/admin?tab=certifications', tabKey: 'certifications', icon: Award },

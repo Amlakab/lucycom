@@ -190,7 +190,7 @@ function ContactContent() {
         <section className="relative py-16 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/INSA/image18.jpg"
+              src="/images/lucycom/contact-corporate-headquarters.jpg"
               alt="Lucycom Office Contact"
               fill
               className="object-cover object-center"
@@ -281,12 +281,12 @@ function ContactContent() {
                     <span className="font-bold text-gray-900 dark:text-white">{isAmharic ? 'የአክሲዮን ማህበር (S.C.)' : 'Share Company'}</span>
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-gray-100 dark:border-slate-800/60">
-                    <span className="text-gray-500 dark:text-gray-400">{isAmharic ? 'የተመዘገበ ካፒታል' : 'Share Capital'}</span>
-                    <span className="font-bold text-blue-600 dark:text-blue-400">2,360,000.00 ETB</span>
+                    <span className="text-gray-500 dark:text-gray-400">{isAmharic ? 'ይፋዊ ፈቃድ' : 'Licensing'}</span>
+                    <span className="font-bold text-blue-600 dark:text-blue-400">ECA & EEA Certified</span>
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-gray-100 dark:border-slate-800/60">
-                    <span className="text-gray-500 dark:text-gray-400">{isAmharic ? 'TIN ቁጥር' : 'Taxpayer ID (TIN)'}</span>
-                    <span className="font-bold font-mono text-gray-900 dark:text-white">0072480301</span>
+                    <span className="text-gray-500 dark:text-gray-400">{isAmharic ? 'የአገልግሎት ሽፋን' : 'Service Scope'}</span>
+                    <span className="font-bold text-green-600 dark:text-green-400">{isAmharic ? 'ሀገር አቀፍ ተከላ እና ጥገና' : 'Nationwide Deployments'}</span>
                   </div>
                   <div className="flex justify-between py-1.5 border-b border-gray-100 dark:border-slate-800/60">
                     <span className="text-gray-500 dark:text-gray-400">{isAmharic ? 'የምዝገባ ቦታ' : 'City Registration'}</span>

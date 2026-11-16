@@ -120,8 +120,8 @@ const initialSettings: Settings = {
     name: 'LUCYCOM TECHNOLOGIES S.C.',
     slogan: 'Lucy the origin, LucyCom the destination',
     sloganAmharic: 'ሉሲ መገኛ፣ ሉሲኮም መዳረሻ',
-    tin: '0072480301',
-    capital: '2,360,000.00 ETB',
+    tin: '',
+    capital: '',
     registrationNo: 'AACATB/14/672/50644211/2019',
     profileBrochureUrl: '/documents/LUCYCOM_Company_Profile.pdf'
   },
@@ -131,7 +131,7 @@ const initialSettings: Settings = {
     subtitle: 'End-to-End ICT, Telecom & Data Center Solutions.',
     subtitleAmharic: 'የተሟላ የቴሌኮም፣ የዳታ ሴንተር እና የዘመናዊ ቴክኖሎጂ ግንባታ መፍትሄዎች',
     description: 'LUCYCOM TECHNOLOGIES S.C. is an Ethiopian share company dedicated to designing, supplying, and supporting resilient, scalable, and international standards-compliant ICT infrastructure.',
-    profileImages: ['/images/lucycom-hero.png', '/images/lucycom-badge.png'],
+    profileImages: [],
     profileImagesData: [],
     resumeUrl: '/documents/LUCYCOM_Company_Profile.pdf'
   },
@@ -140,7 +140,7 @@ const initialSettings: Settings = {
     description: 'LUCYCOM TECHNOLOGIES S.C. is a premier Ethiopian share company dedicated to designing, supplying, installing, and supporting end-to-end ICT infrastructure solutions across civil infrastructure, telecom tower erection, Tier-standard data centers, smart classrooms, and cloud-ready Virtual Desktop Infrastructure (VDI).',
     vision: 'To be the leading ICT infrastructure & digital engineering pioneer in East Africa.',
     mission: 'Delivering resilient, world-class turnkey engineering solutions that empower Ethiopian institutions.',
-    image: '/images/lucycom-hero.png'
+    image: ''
   },
   solutionsSection: {
     title: 'Enterprise ICT & Turnkey Infrastructure Solutions',
@@ -184,7 +184,7 @@ const initialSettings: Settings = {
     title: 'LUCYCOM TECHNOLOGIES S.C. | ICT & Telecom Infrastructure',
     description: "Official portal of LUCYCOM TECHNOLOGIES S.C. - Empowering Ethiopia's Digital Future.",
     keywords: ['LUCYCOM', 'Telecom', 'Data Center', 'Smart Education', 'Ethiopia', 'AI CCTV'],
-    ogImage: '/images/lucycom-hero.png'
+    ogImage: ''
   },
 };
 
@@ -692,7 +692,7 @@ export default function SettingsTab() {
             onChange={(e) => handleChange('company', 'tin', e.target.value)}
             size="small"
             sx={textFieldStyle}
-            helperText="e.g. 0072480301"
+            helperText="e.g. Tax identification number"
           />
           <TextField
             fullWidth
@@ -719,7 +719,7 @@ export default function SettingsTab() {
             onChange={(e) => handleChange('company', 'capital', e.target.value)}
             size="small"
             sx={textFieldStyle}
-            helperText="e.g. 2,360,000.00 ETB"
+            helperText="e.g. Authorized Share Capital"
           />
           <TextField
             fullWidth
@@ -765,7 +765,7 @@ export default function SettingsTab() {
                   alt={`Hero Banner ${index + 1}`}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = '/images/lucycom-hero.png';
+                    (e.target as HTMLImageElement).src = '/logo.png';
                   }}
                 />
                 <IconButton
@@ -1152,7 +1152,7 @@ export default function SettingsTab() {
                     alt="About"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = '/images/lucycom-hero.png';
+                      (e.target as HTMLImageElement).src = '/logo.png';
                     }}
                   />
                   <IconButton

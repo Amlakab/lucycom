@@ -109,6 +109,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { href: '/', label: t('nav.home', 'Home') },
     { href: '/solutions', label: t('nav.solutions', 'Solutions') },
+    { href: '/products', label: isAmharic ? 'ምርቶች' : 'Products' },
     { href: '/projects', label: t('nav.projects', 'Projects') },
     { href: '/partners', label: t('nav.partners', 'Partners') },
     { href: '/licenses', label: isAmharic ? 'ፈቃዶች' : 'Licenses' },
