@@ -7,8 +7,8 @@ import { AuthProvider } from "@/lib/auth";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: "LUCYCOM TECHNOLOGIES S.C. | ICT, Telecom & Data Center Solutions",
-  description: "LUCYCOM TECHNOLOGIES S.C. is a premier Ethiopian share company dedicated to designing, supplying, and supporting resilient, scalable, and international standards-compliant ICT infrastructure.",
+  title: "Lucycom Technologies S.C. | ICT, Telecom & Data Center Solutions",
+  description: "Lucycom Technologies S.C. is a premier Ethiopian share company dedicated to designing, supplying, and supporting resilient, scalable, and international standards-compliant ICT infrastructure.",
   keywords: [
     "Lucycom Technologies",
     "Ethiopian Telecom Infrastructure",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "AI CCTV Surveillance",
     "Electromechanical Contractor Ethiopia"
   ],
-  authors: [{ name: "LUCYCOM TECHNOLOGIES S.C." }],
+  authors: [{ name: "Lucycom Technologies S.C." }],
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Lucycom Technologies S.C.",
     description: "Empowering Ethiopia's Digital Future through World-Class ICT & Telecom Infrastructure.",
     url: "https://www.lucycomtechnologies.com",
-    siteName: "LUCYCOM TECHNOLOGIES S.C.",
+    siteName: "Lucycom Technologies S.C.",
     images: [
       {
         url: "/images/lucycom-hero.png",
